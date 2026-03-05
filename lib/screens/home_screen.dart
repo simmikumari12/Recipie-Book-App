@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/recipe.dart';
 import '../data/recipes_data.dart';
 import 'details_screen.dart';
+import 'package:recipe_app/screens/scanner_page.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -55,6 +56,17 @@ class HomeScreen extends StatelessWidget {
           );
         },
       ),
+      floatingActionButton: FloatingActionButton.extended(
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const ScannerPage()),
+        );
+      },
+      label: const Text('Scan Ingredients'),
+      icon: const Icon(Icons.camera_alt),
+      backgroundColor: Colors.orange,
+    ),
     );
   }
 }
